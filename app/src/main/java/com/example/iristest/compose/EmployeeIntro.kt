@@ -44,7 +44,7 @@ fun EmployeeIntro(user: User) {
         ) {
             Text(
                 modifier = Modifier
-                    .padding(8.dp),
+                    .padding(16.dp),
                 text = "Hi, " + user.employeeName,
                 color = Color.White,
                 fontSize = 70.sp
