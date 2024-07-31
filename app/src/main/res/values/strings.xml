@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">IRISTest</string>
+    <string name="main_activity_instruction">If the app does not automatically redirect:
+\nproceed by saying \'NEXT\'  or double tapping the app icon.</string>
+</resources>
