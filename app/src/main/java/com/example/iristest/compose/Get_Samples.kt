@@ -29,6 +29,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
@@ -113,20 +114,21 @@ fun MenuBack(
         modifier = Modifier
             .background(
                 if (isSelected) colorResource(id = R.color.box_bg)
-                else Color.Transparent)
+                else colorResource(id = R.color.bg_black)
+            )
             .clickable { onClick() }
             .border(
                 width = 2.dp,
                 color = if (isSelected) colorResource(id = R.color.box_bg)
-                else Color.Transparent,
-
-            ),
+                else Color.Transparent)
+            .size(200.dp, 100.dp)
+            .padding(8.dp)
     ) {
         Image(
             painter = painter,
             contentDescription = null,
             modifier = Modifier
-                .size(150.dp)
+                .size(170.dp)
 
         )
     }
