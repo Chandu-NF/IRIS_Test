@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -29,7 +28,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
@@ -50,7 +48,7 @@ enum class SampleOption {
 @Composable
 fun GetSamplesScreen() {
     var selectedOption by remember { mutableStateOf(SampleOption.GetMySamples) }
-    var selectedButton by remember { mutableStateOf(SampleOption.Menu) }
+
 
     Scaffold(
         topBar = {
@@ -64,13 +62,13 @@ fun GetSamplesScreen() {
             ) {
                 MenuBack(
                     painter = painterResource(id = R.drawable.frame_56779__1_),
-                    isSelected = selectedButton == SampleOption.Back,
-                    onClick = { selectedButton = SampleOption.Back }
+                    isSelected = selectedOption == SampleOption.Back,
+                    onClick = { selectedOption = SampleOption.Back }
                 )
                 MenuBack(
                     painter = painterResource(id = R.drawable.frame_56780),
-                    isSelected = selectedButton == SampleOption.Menu,
-                    onClick = { selectedButton = SampleOption.Menu }
+                    isSelected = selectedOption == SampleOption.Menu,
+                    onClick = { selectedOption = SampleOption.Menu }
                 )
             }
         }
@@ -120,7 +118,8 @@ fun MenuBack(
             .border(
                 width = 2.dp,
                 color = if (isSelected) colorResource(id = R.color.box_bg)
-                else Color.Transparent)
+                else Color.Transparent
+            )
             .size(200.dp, 100.dp)
             .padding(8.dp)
     ) {
@@ -149,8 +148,9 @@ fun SampleButton(
             .background(colorResource(id = R.color.bg_black))
             .padding(32.dp)
     ) {
-        Row(modifier = Modifier
-            .padding(32.dp),
+        Row(
+            modifier = Modifier
+                .padding(32.dp),
             horizontalArrangement = Arrangement.Center
         ) {
             Box(

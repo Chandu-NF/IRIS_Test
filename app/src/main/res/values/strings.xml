@@ -2,4 +2,6 @@
     <string name="app_name">IRISTest</string>
     <string name="main_activity_instruction">If the app does not automatically redirect:
 \nproceed by saying \'NEXT\'  or double tapping the app icon.</string>
+    <string name="login_scan">Login to desktop \napp and scan the \nQR code</string>
+    <string name="scan_login">Scan QR Code to Login</string>
 </resources>
