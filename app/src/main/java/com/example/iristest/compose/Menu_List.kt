@@ -68,12 +68,13 @@ fun MenuItem() {
 
 @Composable
 fun MenuList(
-) {
-    val indexItems = remember {
-        arrayListOf(
-            1, 2, 3, 4, 5, 6
-        )
-    }
+)
+{
+//    val indexItems = remember {
+//        arrayListOf(
+//            1, 2, 3, 4, 5, 6
+//        )
+//    }
     val menuItems = remember {
         arrayListOf(
             "Home",
@@ -91,7 +92,7 @@ fun MenuList(
             .fillMaxSize()
             .padding(80.dp)
     ) {
-        indexItems.forEachIndexed { index, item ->
+        menuItems.forEachIndexed { index, item ->
             Row {
                 Box(
                     modifier = Modifier
@@ -111,7 +112,7 @@ fun MenuList(
                 )
                 {
                     Text(
-                        text = item.toString(),
+                        text = (index+1).toString(),
                         color = Color.White,
                         fontSize = 36.sp
                     )
