@@ -40,7 +40,6 @@ import com.example.iristest.R
 enum class SampleOption {
     GetMySamples,
     ScanSamples,
-    Menu,
     Back
 }
 
@@ -60,15 +59,15 @@ fun GetSamplesScreen() {
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                MenuBack(
+                Image(
                     painter = painterResource(id = R.drawable.frame_56779__1_),
-                    isSelected = selectedOption == SampleOption.Back,
-                    onClick = { selectedOption = SampleOption.Back }
+                    contentDescription = null,
+                    modifier = Modifier
                 )
-                MenuBack(
+                Image(
                     painter = painterResource(id = R.drawable.frame_56780),
-                    isSelected = selectedOption == SampleOption.Menu,
-                    onClick = { selectedOption = SampleOption.Menu }
+                    contentDescription = null,
+                    modifier = Modifier
                 )
             }
         }
@@ -101,38 +100,6 @@ fun GetSamplesScreen() {
         }
     }
 }
-
-@Composable
-fun MenuBack(
-    painter: Painter,
-    isSelected: Boolean,
-    onClick: () -> Unit,
-) {
-    Box(
-        modifier = Modifier
-            .background(
-                if (isSelected) colorResource(id = R.color.box_bg)
-                else colorResource(id = R.color.bg_black)
-            )
-            .clickable { onClick() }
-            .border(
-                width = 2.dp,
-                color = if (isSelected) colorResource(id = R.color.box_bg)
-                else Color.Transparent
-            )
-            .size(200.dp, 100.dp)
-            .padding(8.dp)
-    ) {
-        Image(
-            painter = painter,
-            contentDescription = null,
-            modifier = Modifier
-                .size(170.dp)
-
-        )
-    }
-}
-
 
 @Composable
 fun SampleButton(

@@ -1,5 +1,6 @@
 package com.example.iristest.compose
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -29,7 +30,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
@@ -39,7 +39,6 @@ import com.example.iristest.R
 
 @Composable
 fun Get_Samples_For() {
-    var selectedOption by remember { mutableStateOf(SampleOption.GetMySamples) }
 
     Scaffold(
         topBar = {
@@ -51,10 +50,10 @@ fun Get_Samples_For() {
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                MenuBack(
+                Image(
                     painter = painterResource(id = R.drawable.frame_56779__1_),
-                    isSelected = selectedOption == SampleOption.Back,
-                    onClick = { selectedOption = SampleOption.Back }
+                    contentDescription = null,
+                    modifier = Modifier
                 )
                 Text(
                     text = "Get Samples For",
@@ -62,10 +61,10 @@ fun Get_Samples_For() {
                     fontSize = 48.sp,
                     color = Color.White
                 )
-                MenuBack(
+                Image(
                     painter = painterResource(id = R.drawable.frame_56780),
-                    isSelected = selectedOption == SampleOption.Menu,
-                    onClick = { selectedOption = SampleOption.Menu }
+                    contentDescription = null,
+                    modifier = Modifier
                 )
             }
         },

@@ -4,14 +4,15 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.example.iristest.compose.MainActivityLayout
+import com.example.iristest.compose.Get_Samples_For
 
-class MainActivity : ComponentActivity() {
+class GetSamplesForActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            MainActivityLayout()
+            Get_Samples_For()
         }
     }
 }
+

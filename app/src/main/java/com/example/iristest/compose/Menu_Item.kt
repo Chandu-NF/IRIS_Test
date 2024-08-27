@@ -1,5 +1,6 @@
 package com.example.iristest.compose
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -45,10 +46,10 @@ fun MenuItem() {
                     .background(colorResource(id = R.color.bg_black))
                     .fillMaxWidth()
             ) {
-                MenuBack(
+                Image(
                     painter = painterResource(id = R.drawable.frame_56779__1_),
-                    isSelected = selectedButton == SampleOption.Back,
-                    onClick = { selectedButton = SampleOption.Back }
+                    contentDescription = null,
+                    modifier = Modifier
                 )
             }
         }
@@ -61,7 +62,6 @@ fun MenuItem() {
         ) {
             MenuList()
         }
-
     }
 }
 
@@ -70,11 +70,6 @@ fun MenuItem() {
 fun MenuList(
 )
 {
-//    val indexItems = remember {
-//        arrayListOf(
-//            1, 2, 3, 4, 5, 6
-//        )
-//    }
     val menuItems = remember {
         arrayListOf(
             "Home",
@@ -141,7 +136,6 @@ fun MenuList(
                 }
             }
         }
-
     }
 }
 
