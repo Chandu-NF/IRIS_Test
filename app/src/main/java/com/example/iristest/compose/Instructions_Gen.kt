@@ -111,8 +111,8 @@ fun Image_Changer(
 ) {
     var currentIndex by remember { mutableIntStateOf(0) }
     val images = listOf(
-        R.drawable.frame_2,
-        R.drawable.frame_3
+        R.drawable.frame_56557,
+        R.drawable.frame_56557_1
     )
 
     LaunchedEffect(Unit) {
